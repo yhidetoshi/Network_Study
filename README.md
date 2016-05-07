@@ -9,7 +9,9 @@
  - 無制限のマルチキャストトラフィック
 
 
-#### VLAN
+### VLAN
+
+#### VLANの概要/ビジネスグループ化
 ```
 -> 論理的なブロードキャストドメインであり、複数の物理LANセグメントにまたがることができる
 -> VLANを使用するとセグメント化を実装し、組織的な柔軟性を実現できる
@@ -28,4 +30,16 @@
   -  ネットワーク変更に対する迅速なコンバージェンス
   -  トラブルシューティングが容易
   
+#### VLANメンバシップモード
+|種類    |説明         |
+|:-----------|:------------|
+|スタティックVLAN|ポートに対してVLANを割り当てる|
+|ダイナミックVLAN|MACアドレスに対してVLANを割り当てる|
+|音声VLAN|IP電話用|
+
+
+#### 802.1Q トランキング/フレーム
+トランクは単一のリンク上で複数のVLANのトラフィックを伝送する.ネイティブVLANに関連付けられる
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/trunk-image.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/vlantag-frame.png)
 
