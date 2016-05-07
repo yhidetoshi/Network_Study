@@ -41,5 +41,21 @@
 #### 802.1Q トランキング/フレーム
 トランクは単一のリンク上で複数のVLANのトラフィックを伝送する.ネイティブVLANに関連付けられる
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/trunk-image.png)
+
+802.1Qフレームは下記の図の通りにオリジナルフレームにタグフレームがつく.
+
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/vlantag-frame.png)
+
+#### VTP(VLAN Trunking Protocol)
+`実務ではほとんど使わないが試験には出たりする`
+
+VTP(VLAN Trunking Protocol)はVLANの追加、削除、名前変更などのVLAN設定の一元管理を目的としたCisco独自のLayer2プロトロコル.これを利用するとVLAN名の重複やVLANタイプの不適切設定などのオペミスを最小限に抑えることができる.
+
+- VTPモード
+ - サーバ
+ - トランスペアレント
+ - クライアント
+※ 後に説明を記載
+
+
 
