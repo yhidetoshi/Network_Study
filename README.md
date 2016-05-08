@@ -110,3 +110,11 @@ RouterA(config)#interface fastEthernet 0.2
 RouterA(config-subif)#encapsulation dot1Q 20
 RouterA(config-subif)#ip address 192.168.1.254 255.255.255.0
 ```
+`switchport mode`コマンド
+
+|パラメータ  |説明         |
+|:-----------|:------------|
+|switchport mode trunk |ポートを802.1Qへと静的に設定してトランクモードで使う|
+|switchport mode access|ポートのトランクモードを無効にして非トランクで使う|
+|switchport mode dynamic desirable|リンクから非トランクにする trunk, desirable,auto の場合はトランクで使う|
+|switchport mode dynamic auto|リンクから非トランクにする trunk, desirable の場合はトランクで使う|
