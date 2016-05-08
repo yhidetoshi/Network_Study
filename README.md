@@ -110,7 +110,7 @@ RouterA(config)#interface fastEthernet 0.2
 RouterA(config-subif)#encapsulation dot1Q 20
 RouterA(config-subif)#ip address 192.168.1.254 255.255.255.0
 ```
-`switchport mode`コマンド
+**`#switchport mode < >`** コマンド
 
 |パラメータ  |説明         |
 |:-----------|:------------|
