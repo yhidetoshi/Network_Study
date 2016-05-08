@@ -9,7 +9,7 @@
  - 無制限のマルチキャストトラフィック
 
 
-### VLAN
+## VLAN
 
 #### VLANの概要/ビジネスグループ化
 ```
@@ -119,9 +119,6 @@ RouterA(config-subif)#ip address 192.168.1.254 255.255.255.0
 |switchport mode dynamic desirable|リンクから非トランクにする trunk, desirable,auto の場合はトランクで使う|
 |switchport mode dynamic auto|リンクから非トランクにする trunk, desirable の場合はトランクで使う|
 |show interface trunk|trunkモードの確認|
-|show vlan value-id|vlanの確認|
-|show vlan name value-name|vlanの確認|
-|show interface trunk|trunk状態のポートを確認|
 
 - vlanの作成
 ```
@@ -131,3 +128,23 @@ Switch(config-vlan)#name test_vlan2
 ```
 -> `VLAN-idは 1〜1005で設定し vlan.datファイル(vlanデータベース)に保存される`
 
+- vlanポートを割り当てる
+```
+Switch#configure terminal
+Switch(config)#interface range fastethernet 0/2 - 4
+Switch(config-if-range)#switchport access vlan 2
+Switch#show vlan
+```
+|パラメータ  |説明         |
+|:-----------|:------------|
+|show vlan value-id|vlanの確認|
+|show vlan name value-name|vlanの確認|
+|show interface trunk|trunk状態のポートを確認|
+|show vlan brief|VLANメンバシップの確認|
+|show interface fa0/2 switchport|VLANメンバシップ(インターフェースf0/2)の確認|
+
+-> 新しいVLANに再割り当てするとポートは元のVLANから自動的に削除され、新しいVLAN番号のみ適用
+-> vlanを削除するとvlan1も付与されず、すべての通信が止まる.vlan1を明示的に付与するといい
+
+
+##スパニングツリー
