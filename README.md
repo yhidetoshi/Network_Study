@@ -58,4 +58,55 @@ VTP(VLAN Trunking Protocol)はVLANの追加、削除、名前変更などのVLAN
 ※ 後に説明を記載
 
 
+#### 802.1Qとランキングの設定
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/network-vlan-set.png)
 
+※画像はこちらからお借りしました(http://www.ccstudy.org/study/vlan/vlanroute2/vlanroute2.html)
+
+**[目的]**
+```
+・VLAN10とVLAN20という異なるVLANに所属するパソコン同士を通信できるようにする
+・トランク接続に対応したルーター（100Mポートを持つCisco2620など）を使ってVLAN間通信を実現する
+```
+
+- **スイッチにVLANを設定**
+```
+スイッチのFa0/1をVLAN10に設定し，Fa0/2をVLAN20に設定
+これは，トランク接続機能を持たないルーターを使う場合と同じ
+
+SwitchA(config)#interface fastEthernet 0/1
+SwitchA(config-if)#switchport mode access
+SwitchA(config-if)#switchport access vlan 10
+
+SwitchA(config)#interface fastEthernet 0/2
+SwitchA(config-if)#switchport mode access
+SwitchA(config-if)#switchport access vlan 20
+```
+
+```
+違うのは，ルーターとつながるFa0/12を，トランク接続にするところです。
+こうして，スイッチがルーターにタグ付きフレームを送るようにします。
+
+SwitchA(config)#interface fastEthernet 0/12
+SwitchA(config-if)#switchport mode trunk
+```
+
+- **ルーターの設定**
+
+次に，ルーターにサブインタフェースを作ります。
+```
+VLAN10を収容するサブインタフェースをFa0.1（Fa0の1番目のサブインタフェース）とします。
+（ちなみに，サブインタフェース0番はメインインタフェース用に予約されているので利用できません）
+「encupsulation dot1Q 10」というコマンドで，VLAN10のIEEE802.1Qのタグ付きフレームをやりとりできるようにします。
+さらに，VLAN10のデフォルト・ゲートウエイになるアドレス（192.168.0.254/24）を設定します。
+
+RouterA(config-if)#interface fastEthernet 0.1
+RouterA(config-subif)#encapsulation dot1Q 10
+RouterA(config-subif)#ip address 192.168.0.254 255.255.255.0
+
+同様に，VLAN20を収容するサブインタフェースをFa0.2（Fa0の2番目のサブインタフェース）にします。
+
+RouterA(config)#interface fastEthernet 0.2
+RouterA(config-subif)#encapsulation dot1Q 20
+RouterA(config-subif)#ip address 192.168.1.254 255.255.255.0
+```
