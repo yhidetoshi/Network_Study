@@ -110,7 +110,7 @@ RouterA(config)#interface fastEthernet 0.2
 RouterA(config-subif)#encapsulation dot1Q 20
 RouterA(config-subif)#ip address 192.168.1.254 255.255.255.0
 ```
-**`#switchport mode < >`** コマンド
+**`#switchport mode < >`** コマンド/ **vlanコマンド**
 
 |パラメータ  |説明         |
 |:-----------|:------------|
@@ -118,3 +118,16 @@ RouterA(config-subif)#ip address 192.168.1.254 255.255.255.0
 |switchport mode access|ポートのトランクモードを無効にして非トランクで使う|
 |switchport mode dynamic desirable|リンクから非トランクにする trunk, desirable,auto の場合はトランクで使う|
 |switchport mode dynamic auto|リンクから非トランクにする trunk, desirable の場合はトランクで使う|
+|show interface trunk|trunkモードの確認|
+|show vlan value-id|vlanの確認|
+|show vlan name value-name|vlanの確認|
+|show interface trunk|trunk状態のポートを確認|
+
+- vlanの作成
+```
+Switch#configure terminal
+Switch(config)#vlan 2
+Switch(config-vlan)#name test_vlan2 
+```
+-> `VLAN-idは 1〜1005で設定し vlan.datファイル(vlanデータベース)に保存される`
+
