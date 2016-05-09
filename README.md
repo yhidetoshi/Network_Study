@@ -415,3 +415,17 @@ EIGRPはリンクステート及びディスタンスベクターの両ルーテ
   - 不連続なネットワークを使用している場合、自動集約を無効にしてルータの混乱を最小限に抑える必要がある  
 
 - 自動集約を無効にする場合、EIGRPルータコンフィグレーションモードで`no auto-summary`コマンドを使う
+
+#### EIGRP設定の確認
+
+コマンドメモをテーブルに
+
+|コマンド|説明|
+|:---------------|:-----------------|
+|#show ip route eigrp|ルーティングテーブル中の現在のEIGRPエントリを表示|
+|#show ip protools|アクティブなプロセスのパラメータと現在の状態を表示|
+|#show ip eigrp interfaces|EIGRPに設定されたインターフェースに関する情報|
+|#show ip eigrp neighbors [detail]|IP EIGRPが検出したネイバーを表示|
+|#show ip eigrp topology [all-links]|IP EIGRPトポロジーを表示|
+|#show ip eigrp traffic |IP EIGRPパケットの数を表示|
+
