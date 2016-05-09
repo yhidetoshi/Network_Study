@@ -408,3 +408,10 @@ EIGRPはリンクステート及びディスタンスベクターの両ルーテ
 下記の図は参考例
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/eigrp-command1.png)
+
+#### EIGRPの経路自動集約設定と解除
+
+- デフォルトでは,EIGRPは主要なネットワークでアドレスをクラス単位に集約するため、不連続サブネットサポートできない
+  - 不連続なネットワークを使用している場合、自動集約を無効にしてルータの混乱を最小限に抑える必要がある  
+
+- 自動集約を無効にする場合、EIGRPルータコンフィグレーションモードで`no auto-summary`コマンドを使う
