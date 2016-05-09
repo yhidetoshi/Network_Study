@@ -385,6 +385,8 @@ EIGRPはリンクステート及びディスタンスベクターの両ルーテ
  - トポロジーテーブル
  - ルーティングテーブル
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/eigrp_tables.png)
+
 - EIGRPは宛先までの**最短経路(サクセサ)**および**バックアップ経路(フィージブルサクセサ)**を決定するために以下の2つのパラーメータを使用する.
  - アドバタイズディスタンス(AD)
    - EIGRPネイバーが特定のネットワークに到達するためのEIGRPメトリック
