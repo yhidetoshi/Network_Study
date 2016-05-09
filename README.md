@@ -61,7 +61,7 @@ VTP(VLAN Trunking Protocol)はVLANの追加、削除、名前変更などのVLAN
 #### 802.1Qとランキングの設定
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/network-vlan-set.png)
 
-※画像はこちらからお借りしました(http://www.ccstudy.org/study/vlan/vlanroute2/vlanroute2.html)
+※画像引用(http://bit.ly/23AIDUq)
 
 **[目的]**
 ```
@@ -243,6 +243,17 @@ Layer2アクセスポートとして設定されたインターフェースを�
 
 -> Portfastはスパニングツリーのコンバージェンスのためにアクセスポートが待機する時間を最小限にすることを目的にしている. 使用は"アクセスポートに限る"
 ```
+**(注意: どのポートでもportfastを設定できるが、スイッチと接続するポートで設定しないように)**
+
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/port-fast.png)
 
 (画像引用:http://bit.ly/23AI9h3)
+
+##### スパニングツリーパスコスト
+
+|リンク速度  |コスト       |
+|:-----------|:------------|
+|10 Gps| 2    |
+|1 Gps| 4    |
+|100 Mps| 19    |
+|10 Mps| 100    |
