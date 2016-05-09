@@ -191,3 +191,25 @@ Switch#show vlan
  - **MACアドレステーブルの不安定性** 
    - 同一のフレームを異なるポートで受信するとMACアドレステーブルの内容が不安定になる 
  
+
+#### スパニングツリープロトコル(STP)
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/stp-fig1.png)
+
+```
+1.ルートブリッジを決定
+ -> ブリッジ(switch)IDが最小のスイッチが選ばれる
+   -> A < B < C
+
+2. 非ルートブリッジでルートポート(RP)を決定する
+　 1. パスコストが最小のポート
+　 2. (BPDU)Bridge Protocol Data Unitの送信元ブリッジが最小のポート
+　 3. BPDUポートIDが最小のポート
+
+3. 各セグメントで指定ポート(DP)を決定
+ -> ルートブリッジに近いポート
+
+4. 残りが非指定ポート(NDP)
+```
+
+
