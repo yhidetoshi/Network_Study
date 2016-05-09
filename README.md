@@ -352,3 +352,6 @@ OSPFのアドバタイズ値が110、EIGRPのアドバタイズ値が90 の場�
  - ループフリー
 - 欠点
  - 多くのルータのリソースを必要とする 
+
+
+#### VLSM(Variable-Length Subnet Mask)
