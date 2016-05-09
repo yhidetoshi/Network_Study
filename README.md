@@ -462,3 +462,7 @@ Router(config-router)# variance multiplier
   メトリックの経路で、ルータによるロードシェアリングが行なわれる
 - デフォルトのvariance値は1  
 ```
+
+#### varianceの例
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/eigrp-variance-lb.jpg)
