@@ -267,7 +267,8 @@ Layer2アクセスポートとして設定されたインターフェースを�
 
 
 ## ルーティング
-
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/igp-egp-image.jpg)
+(画像引用：http://bit.ly/1T6qb6x)
 - IGP(Interior Gateway Protocol)
  - AS内でルーティング情報を交換するために使われるプロトコル
     - RIPv2 EIGRP OSPF 
@@ -287,3 +288,7 @@ Layer2アクセスポートとして設定されたインターフェースを�
  - ディスタンスベクターとリンクステートの利点を組み合わせたプロトコル
   
 ##### メトリックを使用した最短経路の選択
+
+
+
+
