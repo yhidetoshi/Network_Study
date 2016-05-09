@@ -392,3 +392,19 @@ EIGRPはリンクステート及びディスタンスベクターの両ルーテ
    - EIGRPネイバーが特定のネットワークに到達するためのEIGRPメトリック
  - フィージブルディスタンス(FD)
    - あるEIGRPネイバーから学習した特定のネットワークのADとそのネイバーに到達するためのEIGRPの合計 
+
+#### EIGRPの設定と確認
+```
+- router eigrpコマンド、networkコマンドを使ってEIGRPの設定をする
+- ルーティング情報を相互に交換するすべてのEIGRPルータには同じAS番号を使用する必要がある
+```
+
+|コマンド|説明|
+|:---------------|:-----------------|
+|router eigrp 100|AS100のEIGRPルーティングプロセスを有効にします|
+|network 172.16.0.0|ネットワーク172.16.0.0をEIGRPにルーティングプロセスに関連付ける|
+|network 10.0.0.0|ネットワーク10.0.0.0をEIGRPルーティングプロセスに関連付ける|
+
+下記の図は参考例
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/eigrp-command1.png)
