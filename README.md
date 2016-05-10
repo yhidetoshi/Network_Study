@@ -487,6 +487,8 @@ Router(config-router)# variance multiplier
 
 ## ACL(Access Control List)
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/acl-icon.jpeg)
+
 - フィルタリング
  - ルータを経由するパケットをフィルタリングしてIPトラフィックを管理する
    - 受送：インバウンド
@@ -500,3 +502,33 @@ Router(config-router)# variance multiplier
 - ルータを管理するためにルータのvtyポートで送受信されるTelnettラフィック
 
 
+(vtyポートについて)
+```
+VTY line (Virtual Terminal Line)は仮想端末のライン.
+コンソールポートとは異なり、実際に物理的にポートを持っている訳ではない.
+Ciscoルータ上で仮想的に複数ポートを持つことにより、複数のユーザが同時にアクセスすることが可能.
+デフォルトではVTYポート番号はline vty 0 4とあることから仮想ポートとしては 0～4 の5ポートで5つのtelnetセッションを接続することができる.
+VTYポートは、小さい番号から使用されていきます。
+```
+
+- ルータがパケット破棄する場合、一部のプロトコルは宛先が到達不可能であることを通知する特殊パケットを返す
+ - ping: `Destination unreachable(U.U.U.)`
+ - traceroute: `Administratively prohibited(!A * !A)`
+
+
+#### ACLのガイドライン
+
+- 標準ACLと拡張ACLでフィルタリングできるものが異なる
+- 1つのプロトコル,1つの方向、1つのインターフェースについて使用できるのでは1つのACLのみ
+- ACL文の順番でテストが行なわれるため、最も特殊な文をリストの一番上にする
+- 最後のACLテストは常に、残りすべてを拒否する暗黙のdeny文であるため、どのリストにも少なくても１つは`permit`文が必要
+- ACLはグローバルに作成してからインバウンドまたはアウトバウンドトラフィック用にインターフェースに適用する
+- ACLは適用する方法によって、ルータ経由するトラフィックをフィルタリングできるほか、ルータの出入りするトラフィックをフィルタリングできる
+- ネットワークにACLを設置する場合
+ - 拡張ACLは送信元近くに配置する
+ - 標準ACLは宛先近くに配置する
+
+
+#### その他のACL
+
+##### ダイナミックACL
