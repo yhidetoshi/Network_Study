@@ -591,3 +591,9 @@ ACLの条件文では「172.16.1.0 0.0.0.255」と入力。「172.16.1.」まで
 - すべてのアドレスビットを無視する場合
 `0.0.0.0 255.255.255.255` => `any`
 
+#### ACLの設定例
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/acl-setting1.png)
+
+(引用:http://bit.ly/1Np2TGL)
+
