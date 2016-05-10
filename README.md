@@ -533,6 +533,8 @@ VTYポートは、小さい番号から使用されていきます。
 
 ##### ダイナミックACL
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/dynamic-acl.png)
+
 - **ダイナミックACL(ロックアンドキー)**
  - ルータを経由しようとするユーザは、ルータにTelnetで接続して認証されない限り、ブロックされる 
  
@@ -549,3 +551,7 @@ VTYポートは、小さい番号から使用されていきます。
  - ハッカーによるネットワークへの侵入機会が減る
  - 他に設定されているセキュリティ制限を犠牲にせずにファイアーウォールによるダイナミックユーザアクセスが可能
 
+
+#### 再帰ACL
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/reflexive-acl.png)
