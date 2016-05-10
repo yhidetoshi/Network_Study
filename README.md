@@ -600,6 +600,8 @@ ACLの条件文では「172.16.1.0 0.0.0.255」と入力。「172.16.1.」まで
 
 ## VPN
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/vpn-image.png)
+
 #### VPNについて
 - VPN(Virtual Private Network)
  - プライベートネットワーク内の情報をパブリックネットワークを介して伝送する
