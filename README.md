@@ -466,3 +466,21 @@ Router(config-router)# variance multiplier
 #### varianceの例
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/eigrp-variance-lb.jpg)
+
+#### EIGRPの認証/MD5
+
+(認証について)
+- MD5認証をサポートする
+- ルータあh送信するすべてのEIGRPパケットについて自己を識別する
+- ルータは受診する各ルーティングアップデートパケットの送信元を認証する
+- 参加ネイバーはそれぞれ、同じ鍵を設定している必要がある
+ 
+(MD5認証の設定ステップ)
+
+1. キーチェーン(使用可能な鍵[パスワード]のグループ)を作成する
+2. 鍵IDを各鍵に割り当てる
+3. 鍵を識別する
+4. (オプション)鍵が有効な期間を指定する
+5. インターフェースでMD5認証を有効にする
+6. インターフェースで使用されるキーチャーンを指定する
+
