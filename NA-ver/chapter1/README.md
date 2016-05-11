@@ -142,7 +142,7 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/osi-tcpicstack-fig.png)
 
 
-**TCP/IPプロトコルスタック]**
+**[TCP/IPプロトコルスタック]**
 - アプリケーション層
   - ネットワークアプリケーションに必要なサービスを定義
 - トランスポート層
