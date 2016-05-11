@@ -137,4 +137,7 @@
   - スイッチ(ハードウェア処理/ポート(多))はブレッジ(ソフトウェア処理/ポート(少))より高速にフレームを転送できる
   
 
+[OSI参照モデルとTCP/IPの改装モデル]
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/osi-tcpicstack-fig.png)
 
