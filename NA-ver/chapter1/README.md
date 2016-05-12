@@ -158,5 +158,7 @@ IP(Internet Protocol)について
 - データ回復機能なし
 - 階層型アドレッシング
 
+**[IPv4ヘッダフォーマット]**
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ipv4-header.png)
 
