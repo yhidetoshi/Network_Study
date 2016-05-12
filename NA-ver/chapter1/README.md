@@ -162,3 +162,22 @@ IP(Internet Protocol)について
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ipv4-header.png)
 
+
+- TCP(Transmission Control Protocol)
+  - コネクション型のトランスポート層のプロトコル
+  - 上位層から渡されたデータをネットワーク層のMTU(最大転送ユニット)に適したサイズに分割し、セグメントを生成する
+  - TCPヘッダには送信元と宛先のポート番号が含まれる
+  - 信頼性のある通信を実現するために
+    - 3ウェイハンドシェイク(コネクションの確立)
+      - コネクションを確立してからデータを転送する 
+    - シーケンス番号による順序制御
+    - 確認応答
+    - 再送制御
+    - ウィンドウによるフロー制御
+    - 輻輳制御
+    - エラー制御
+    
+
+**[3ウェイハンドシェイク]**
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/3wayhandshake.png)
