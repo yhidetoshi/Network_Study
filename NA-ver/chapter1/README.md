@@ -222,4 +222,31 @@ IP(Internet Protocol)について
   - IPデータグラムによってカプセル化される
   - pingやtraceroute
 
+- DNSトTFTPはLayer4のトランスポート層
 
+- DNS(Domain Name System)
+  - UDP
+    - クライアントとDNSサーバ間
+  - TCP
+    - DNSサーバ間
+ 
+- FTP(File Transfer Protocol)
+  - アプリケーション層でTCP上で動作
+  - TCPではアプリケーション層から大きなデータを受け取るとMSS(Maximum Segment Size)と呼ばれるサイズに分割し、複数のTCPセグメントとして送信する
+  - TCPヘッダー内のシーケンス番号を使って正しい番号順に再構成することを順序制御という
+ 
+|メッセージ名 |送信する側|説明|
+|:-----------|:------------|:------------|
+|DHCP DISCOVER|クライアント|使用可能なDHCPサーバを探すためのメッセージ|
+|DHCP OFFER|サーバ|DHCPクライアントのDHCP DISCOVERに応答し、設定情報の候補を通知する|
+|DHCP REQUEST|クライアント|設定情報を正式に取得するためにDHCPサーバへ要求する|
+|DHCP ACK|サーバ|設定情報をDHCPクライアントに提供する|
+
+- DHCPリレーエージェント
+  - ルータにDHCPリレーエージェントを設定するとブロードキャストされる
+  - DHCPサーバが外部のネットワークに存在する場合は機能しない
+  - DHCPリレーエージェントによって、ルータはDHCP DISCOVERを転送できる
+
+- Windows PCのDHCPトラブルシューティング
+  - `ipconfig /renew`:IPアドレスのリースを更新(再割り当て)する
+  - `ipconfig /release`:取得した現在のIPアドレスを解放する
