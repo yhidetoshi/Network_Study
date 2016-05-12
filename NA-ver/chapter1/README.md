@@ -181,3 +181,28 @@ IP(Internet Protocol)について
 **[3ウェイハンドシェイク]**
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/3wayhandshake.png)
+
+- **トランスポート層のプロトコル(TCP/IP)**
+  - TCP
+    - コネクション型
+    - 高信頼性
+    - シーケンス番号による順序制御
+    - データ単位はセグメント
+  - UDP
+    - コネクションレス型
+    - ベストエフォート型
+    - 確認応答なし
+    - オーバヘッドが小さい
+    - 音声やビデオストリーミングに適している
+    - データの単位はデータグラム
+    - UDPヘッダには送信元ポート/宛先ポート/長さ/テェックサム が含まれる
+  
+**[ARP]**
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/arp-image.jpg)
+
+- ARP(Address Resolution Protocol)
+  -  **IPアドレスから**MACアドレスを取得するためのプロトコル
+  -  ブロードキャストを利用して同じネットワークに接続されているすべてのノードにリクエストする
+  -  リクエストされたアドレスが自身のIPアドレスと一致したノードはARPリプライ(応答)メッセージをユニキャストで送信する
+
