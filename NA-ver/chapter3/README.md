@@ -27,6 +27,8 @@
 | #copy running-config startup-config　|現在の設定情報を保存|
 | #reload　|ルータ、スイッチを再起動する|
 | #delete flash　|フラッシュメモリ内のファイルを消去|
+| (config-if)# no shutdown　|インターフェースの有効化|
+| (config-if)# shutdown　|インターフェースの無効化|
 
 
 - **Pingコマンド**(@Cisco iOS)
@@ -113,3 +115,9 @@ show interfacesコマンド、show ip interface briefコマンドは(,)を挟ん
   - (*) 物理層up, データリンク層upでもあくまでLayer2の状態なので,ping(Layer3)が成功するかは不明
 
 
+- インターフェスにipアドレスをふる
+```
+(config)#interface <interface-id>
+(config-if)#ip address <ip-address> <subnetmask>
+
+```
