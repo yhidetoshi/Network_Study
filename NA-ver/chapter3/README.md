@@ -16,6 +16,18 @@
 |ctrl + shift + 6|ping tracerouteを中断する|
 |tab　|補完|
 | ↑ もしくは ctrl + p　|直前のコマンド|
+| ↓ もしくは ctrl + n　|呼び出したコマンドを前に戻す|
 | ?　|使用可能なコマンドを表示|
+| #show histroy　|過去のコマンド表示|
+| (config-if)#do show histroy　|過去のコマンド表示|
 
-
+- Pingコマンド(@Cisco iOS)
+  - 定義した時間内にエコー要求パケットが宛先に到着し、エコー応答を受信した場合にのみ成功と判断
+  - User EXECモードまたは特権EXECモードでpingが使用できる
+  - `ping <target_ip>`を`p <target_ip>`と省略できる
+  - デフォルトではICMPエコー要求パケットを5つ送信し、タイムアウト時間は2秒になっている
+  - ping実行時の表示記号
+    - `!` : ICMPエコー応答を受信
+    - `.` : ICMPエコー応答を受信できずにタイムアウトした
+    - `U` : ICMP宛先到達不能(Destination Unreachable)を受信
+  
