@@ -30,6 +30,8 @@
     - `!` : ICMPエコー応答を受信
     - `.` : ICMPエコー応答を受信できずにタイムアウトした
     - `U` : ICMP宛先到達不能(Destination Unreachable)を受信
+    - `&` : TTL超過エラー
+    - `M` : フラグメント化不可エラー
  
 - Pingでの注意点
 ```
@@ -42,3 +44,15 @@ Ping先が同じネットワーク(ブロードキャストドメイン)に存�
 ウェイのMACアドレスを取得する必要がある
 ```
 
+- 拡張Ping
+  - 指定可能な主な項目
+    - プロトコル(Layer3)
+    - ターゲットIPアドレス
+    - リピートカウント(パケット数)
+    - データグラムサイズ
+    - タイムアウト時間
+    - 送信元アドレス(インターフェース名で指定可能)
+
+(参考:拡張pingのターミナル)
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ping-ex.png)
