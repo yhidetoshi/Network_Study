@@ -24,6 +24,9 @@
 | #show version　|ルータ製品のモデル名,実行中のiOS情報,インターフェースの種類と数,各種メモリサイズ,ルータ起動時からの時間など、本体の情報を表示|
 | #show running-config　|iOSのバージョン含め、現在のコンフィグレーションが見れる|
 | #show startup-config　|NVRAMに保存した時の情報を表示|
+| #copy running-config startup-config　|現在の設定情報を保存|
+| #reload　|ルータ、スイッチを再起動する|
+| #delete flash　|フラッシュメモリ内のファイルを消去|
 
 
 - **Pingコマンド**(@Cisco iOS)
