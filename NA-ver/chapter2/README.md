@@ -1,5 +1,7 @@
 ### Chapter2 IPv4アドレスとサブネット
 
+※ 設問28を再度確認する
+
 ####[IPアドレスとは]
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ipaddress-fig1.png)
