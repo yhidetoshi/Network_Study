@@ -106,10 +106,10 @@ show interfacesコマンド、show ip interface briefコマンドは(,)を挟ん
   - **Serial0/0 administratively down, line protocol is down**
     - shutdwonコマンドによって、インタフェースが管理的に無効になっている
   - **Serial0/0 is down, line protocol is down**
-    - 物理層が正常に動作していない.
-    　- ケーブルが接続されていない
-    　- ケーブルが正しくない
-    　- 対向のデバイス側でインターフェースが管理的に無効(shutdown)になっている
+    - 物理層が正常に動作していない
+        - ケーブルが接続されていない
+        - ケーブルが正しくない
+        - 対向のデバイス側でインターフェースが管理的に無効(shutdown)になっている
   - (*) 物理層up, データリンク層upでもあくまでLayer2の状態なので,ping(Layer3)が成功するかは不明
 
 
