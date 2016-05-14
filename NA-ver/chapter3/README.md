@@ -121,3 +121,16 @@ show interfacesコマンド、show ip interface briefコマンドは(,)を挟ん
 (config-if)#ip address <ip-address> <subnetmask>
 
 ```
+
+- インターフェースに設定したIPアドレスとサブネットマスクを確認する
+```
+#show running-config
+#show protocols
+```
+
+- インターフェースの状態を確認する
+```
+show interfaces
+show ip interface
+show ip interface
+```
