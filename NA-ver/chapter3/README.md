@@ -132,5 +132,6 @@ show interfacesコマンド、show ip interface briefコマンドは(,)を挟ん
 ```
 show interfaces
 show ip interface
-show ip interface
+show ip interface brief
+show protocols
 ```
