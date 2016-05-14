@@ -1,13 +1,16 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/cisco-ios-icon.jpg)
 
-===
+
 ### Chapter3 Cisco IOSソフトウェアの基礎
 - **内容**
-  - Cisco ISOソフトウェア操作
-  - Ciscoルータ及びCatalystスイッチの基本設定
-  - 基本的な検証コマンド
-  - コンフィグレーションの保存
-  - Cisco ISO接続診断
+  - **Cisco ISOソフトウェア操作**
+  - **Ciscoルータ及びCatalystスイッチの基本設定**
+  - **基本的な検証コマンド**
+  - **コンフィグレーションの保存**
+  - **Cisco ISO接続診断**
+
+
+
 
 
 - Ciscoルータの初期設定
