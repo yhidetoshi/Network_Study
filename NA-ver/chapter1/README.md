@@ -1,4 +1,4 @@
-### Chapter1 ネットワークの基礎とTCP/IP
+# Chapter1 ネットワークの基礎とTCP/IP
 
 - MDI :コンピュータ
 - NIC :ルータ
