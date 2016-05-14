@@ -1,6 +1,14 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/cisco-ios-icon.jpg)
 
+===
 ### Chapter3 Cisco IOSソフトウェアの基礎
+- **内容**
+  - Cisco ISOソフトウェア操作
+  - Ciscoルータ及びCatalystスイッチの基本設定
+  - 基本的な検証コマンド
+  - コンフィグレーションの保存
+  - Cisco ISO接続診断
+
 
 - Ciscoルータの初期設定
     - 必要なもの
@@ -31,6 +39,17 @@
 | #delete flash　|フラッシュメモリ内のファイルを消去|
 | (config-if)# no shutdown　|インターフェースの有効化|
 | (config-if)# shutdown　|インターフェースの無効化|
+| logging synchronous　|コマンド入力中に何かのメッセージ割り込むように表示されても、コマンドが改行された新しい行に表示される|
+| no logging console　|コンソールに対するログ出力が無効化される|
+| privilege level 15|ログインするといきなり特権EXECモードから始まる|
+| logging console 7| コンソール上に出力するログメッセージのレベルを7以上に設定される(デバッグになる)|
+| (config)#no ip domain-lookup 　|DNS機能の無効化|
+| #terminal monitor 　|VTY(仮想端末)へのログ表示の有効化|
+| #u all 　|undebug allの省略形. 全てのデバッグ機能の無効化|
+| (config)#no ip http server 　|HTTPサーバ機能の無効化|
+| #terminal history size 　|コマンド履歴数の指定|
+| (config-line)#exec-timeout 　|EXECセッションのタイムアウトの無効化|
+| (config-if)#description <string>　|インターフェース説明文の設定|
 
 
 - **Pingコマンド**(@Cisco iOS)
@@ -99,6 +118,7 @@ show interfacesコマンド、show ip interface briefコマンドは(,)を挟ん
 右側は "データリンク層レベルの状態"を表示している
 ```
 - インターフェースの状態(4種類)
+  - ルータのインターフェースはデフォルトで無効化(shutdown)されている 
   - **Serial0/0 is up, line protocol is up** 
     - 物理層もデータリンク層も正常に動作している
     - データリンク層(Layer2)レベルの通信が可能
@@ -137,3 +157,13 @@ show ip interface
 show ip interface brief
 show protocols
 ```
+
+- 無効なコマンドを入力した場合
+  - その文字列をホスト名としてIPアドレス変換しようとする
+    - ネットワーク上のDNSサーバにブロードキャスト発行して問い合わせるために数秒かかる
+  - これを避けるためには`no ip domain-lookup`コマンドを使用して名前解決機能を停止する
+  - デフォルトではこの機能は有効になっている
+
+
+
+
