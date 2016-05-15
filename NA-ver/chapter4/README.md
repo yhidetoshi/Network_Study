@@ -97,4 +97,41 @@
   - Telnet接続する場合,VTY(仮想端末)ポートへログインするにはデフォルト認証機能が有効なのでパスワードを設定する必要がある
       - IPアドレス設定
       - デフォルトゲートウェイの設定
+        - `#show running-config`でデフォゲを確認 
       - VTYパスワードの設定
+
+
+- 管理インターフェースとデフォルトゲートウェイの設定
+```
+(config)#interface vlan <vlan-id>
+(config-if)#ip address <ip-address> <subnet-mask>
+(config-if)#no shutdown
+(config)#ip default-gateway <ip-address>
+```
+- 送信元のMACアドレス
+  - MACアドレスは同一ネットワーク内で使用されるLayer2アドレスのため、ルータを経由すると送信元と宛先のMACアドレスは変更される
+  - ルータを経由した後はARPによって宛先MACアドレスを取得する
+  - Layer3はルータを経由しても変更されない
+
+- オートネゴシーエション
+  - 接続している2つのポート同士が対応している通信規格や通信モードの違いを自動的に判定し、最適な設定で通信を行うための機能
+  - 全二重の設定コマンド: `(config-if)#duplex full`
+  - オートネゴシエーション: `(config-if)#duplex auto`
+  - 半二重の設定コマンド：`(config-if)#duplex half`
+
+- `show interface status`コマンド結果の見方
+  - status
+    - `connected`:ケーブルが接続されてリンクアップの状態
+    - `notconnect`:ケーブルが接続されていない、or 接続先が電源OFF
+    - `disabled`:shutdownコマンドで管理的に無効
+  - 通信モード
+    - `full`:duplex fullコマンドで全二重に設定
+    - `half`:duplex halfコマンドで半二重に設定
+    - `auto`:オートネゴシエーション機能が有効(デフォルト)
+    - `a-full`:オートネゴシエーションの結果、全二重になった
+    - `a-halt`:オートネゴシエーションの結果、半二重になった
+    - 以下、speed
+    - `100`:speed 100コマンドで100Mbpsに設定
+    - `10`:speed 100コマンドで10Mbpsに設定
+    - `auto`:オートネゴシエーション機能が有効(デフォルト)
+    - `a-100`:オートネゴシエーションの結果、100Mbpsになっている
