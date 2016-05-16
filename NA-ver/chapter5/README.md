@@ -112,3 +112,7 @@
     - 通信容量は274.176Mbps
     - 別名：DS4
 
+**[ルーティングテーブルとメトリック値、見方]**
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/routing-table.png)
+
