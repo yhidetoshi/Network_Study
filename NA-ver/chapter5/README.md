@@ -116,3 +116,19 @@
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/routing-table.png)
 
+
+- ルーティングテーブルの見方(show ip route)
+  - [C]は直接接続
+  - Loopbackインターフェースは内部で仮想的に作られる論理インターフェースであり、物理IFではない
+  - `Gateway of last resort is not set`:デフォルトルートが存在しないを意味している
+
+[バックアップ経路の設定]
+```
+ダイナミックルーティングを行うとき、ルーティングプロトコルから経路情報から
+失われた場合のバックアップとしてスタティックルートを選択する
+ip route コマンドでスタティックルートで設定するときにAD値を付加する.
+このとき、指定するAD値は使用しているルーティングプロトコルのAD値よりも大きな値にする必要がある
+```
+
+
+
