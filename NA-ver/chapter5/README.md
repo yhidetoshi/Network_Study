@@ -238,3 +238,15 @@ ip route コマンドでスタティックルートで設定するときにAD値
 (config)#ip route <target_ip> <netmask> <自分のIFを指定 or next-hop_address>
 ```
 
+- ARP(Address Resolution Protocol)
+  - ARPはIPアドレスを基にMACアドレスを解決する 
+  - ARPテーブルを表示するには`show ip arp`
+  - Windowsでは`arp -a`
+  - IPアドレスに基づいて相手のMACアドレスを調べる(ブロードキャスト)　: ARPリクエスト
+  	 - ARPリクエストに対する返答はユニキャスト
+  - ARPテーブルの「-」の記号はルータ自身のインターフェースを基に登録されている
+  - 「-」が表示されているとインタフェースはアクティブな状態
+  - ルータはLayer2ヘッダの送信元MACアドレスと宛先MACアドレスを変更する
+     - 送信元MACアドレス: ルータ自身の出力インターフェースのMACアドレス
+     - 宛先MACアドレス: 宛先IPアドレス(またはネクストホップアドレス)
+  - ARPによって動的に登録されたエントリには経過時間が表示される
