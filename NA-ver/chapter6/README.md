@@ -106,10 +106,19 @@
   - `dynamic auto`: DTPフレームを受診して対向からトランクになるように働きかけられるとトランクポートになる.対向がaccessまたはdynamic autoの場合はaccessポートになる
 
 
-
-
 **明示的にトランクポートまたはアクセスポートにしたい場合のコマンド**
 ```
 (config-if)#switchport mode { access | trunk }
 ```
+
+**[ポートのリンク状態]**
+
+|                 |access       |trunk        |dynamic desirable|dynamic auto |
+|:----------------|:------------|:------------|:----------------|:------------|
+|access           |access       |制限付き     |**access**       |**access**   |
+|trunk            |制限付き     |trunk        |trunk            |trunk        |
+|dynamic desirable|**access**   |trunk        |trunk            |trunk        |
+|dynamic auto     |**access**   |trunk        |trunk            |**access**   |
+
+
 
