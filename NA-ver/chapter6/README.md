@@ -147,3 +147,16 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ether-frame-isl.png)
 
 (図の引用：http://bit.ly/1U0p1n6)
+
+|トランクプロトコル|IEEE 802.1Q  |ISL          |
+|:-----------------|:------------|:------------|
+|規格              |IEEE         |シスコ独自   |
+|方式              |タギング     |カプセル化   |
+|ネイティブVLAN    |サポート     |なし         |
+|フレームの増加サイズ|4バイト    |30バイト(ヘッダ:26,FCS:4)|
+|FCSの処理         |再計算       |フィールド追加|
+|VLAN ID           |12bit        |10bit         |
+|VLAN数            |4096(2^12)   |1024(2^10)    |
+
+
+
