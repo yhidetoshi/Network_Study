@@ -206,4 +206,15 @@
   - Encapsulationが「802.1q」はカプセル化タイプはIEEE 802.1Qを使用
   - Mode部分が「on」になっている場合、`switchport mode trunk`コマンドが設定されている
 
+- トランクリンク上でネイティブVLANが異なるとミスマッチエラーが表示される
 
+- VLAN間ルーティング
+  - 異なるVLAN間で通信するためには、ルータ、または、Layer3を使用して相互接続する
+  - ルータの物理インターフェース上に仮想のサブインターフェースを設定すると1つの物理インターフェースだけで複数のVLANを相互接続できる
+    - **サブインターフェース**：1つの物理インタフェースを論理的に複数に分割するための仮想インターフェース 
+
+**[Router on a stick]**
+
+-> Layer2スイッチのトランクポートとルータを接続してVLAN間ルーティングを行う
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/router-on-a-stick.jpg)
