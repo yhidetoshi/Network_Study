@@ -140,3 +140,10 @@
 |VLAN設定の同期        | ○      　　 |   ○         |×                 |
 
 
+**トランクプロトコル**
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ether-frame.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ether-frame-8021q.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ether-frame-isl.png)
+
+(図の引用：http://bit.ly/1U0p1n6)
