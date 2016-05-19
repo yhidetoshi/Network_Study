@@ -218,3 +218,38 @@
 -> Layer2スイッチのトランクポートとルータを接続してVLAN間ルーティングを行う
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/router-on-a-stick.jpg)
+
+
+- Router on a stick構成では次の3つの要素に設定が必要
+  - ルータ：サブインタフェースの設定 
+  -  スイッチ：トランクポートの設定
+  -  PCデフォルトゲートウェイの設定
+  
+**Router on a stick構成に必要なルータの設定**
+[手順]
+1.  サブインタフェースの作成
+```
+サブインタフェースの作成
+(config)#interface <interface-id>.<subinterface numner>
+(config-subif)#
+```
+2.  トランクプロトコルとVLAN IDの指定
+```
+トランクプロトコルとVLAN IDの指定
+(config-subif)#encapsulation dot1q <vlan-id> |native|
+(*) ISLにする場合は, encapsulation isl <vlan-id>コマンドを使う
+```
+3.  IPアドレスの割り当て
+```
+サブインターフェースへのIPアドレスの割り当て
+(config-subif)#ip address <ip-address> <subnet-mask>
+```
+**ネイティブVLANの扱いには次の2通り**
+1.  ネイティブVLANをサブインターフェースに対応付ける
+    (encapsulationコマンドでnativeオブションを付ける)
+2.  ネイティブVLANを物理インタフェースに設定する
+    (encapsulationコマンドは不要)
+
+- VTY(仮想端末)に接続する方法
+  - スイッチにIPアドレスを設定する必要がある
+    - 管理目的でIPアドレスを付与したVLANを管理VLANという 
