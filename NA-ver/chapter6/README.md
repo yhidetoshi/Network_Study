@@ -159,4 +159,22 @@
 |VLAN数            |4096(2^12)   |1024(2^10)    |
 
 
+- UTPクロスケーブル
+  - 2台のスイッチ間を接続
+  - 複数のVLANを通す時も同様
 
+- DTPネゴシエーションを使わずに固定でトランクポートに設定するコマンド
+  - 固定でtrunkポート: `switchport mode trunk` 
+  - DTPの無効化: `(config-if)#switchport nonegotiate`
+  - 無効化されたDTPを有効化: `(config-if)#no switchport nonegotiate`
+
+- スイッチポートがトランクとして動作していることを確認するコマンド
+  - `show interface switchport`
+  - `show vlan`
+  - `show interfaces trunk`
+  - `show interfaces status`
+
+- `show vlan`の結果
+  - デフォルトでは"VLAN0020"のように名前がつけられる
+  - トランクポートは表示されない
+  - VLAN1002〜1005はデフォルトのVLANで削除できない
