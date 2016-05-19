@@ -75,3 +75,26 @@
   - `show interfaces switchport`
   - `show running-config`
   - `show interface status`
+
+**トランクの設定には下記の1,2が必要**
+
+1.トランクプロトコルの設定
+  - `(config-if)#switchport trunk encapsulation{ isl | dot1q | negotiate }` 
+    - `isl` : トランクプロトコルをISLにする
+    - `dot1q` : トランクプロトコルをIEEE802.1Qにする
+    - `negotiate` : 両端でネゴシエーションし、トランクプロトコルを決定する(デフォルト)
+    (*) ISLはCisco独自 IEEE 802.1Qは標準
+
+2.トランクポートの設定
+  - `(config-if)#switchport mode trunk` 
+
+よってまとめると
+```
+(config)#interface fastethernet 0/1
+(config-if)#switchport trunk encapsulation dot1q
+(config-if)#switchport mode trunk
+````
+
+- **DTP**(Dynamic Trunking Protocol)
+  - 対向機器のポートネゴシエーションを行って動的にトランクポートを設定するプロトコル 
+  - 対向機器のポートとネゴシエーションを行い、その設定に応じてスイッチポートのタイプ(アクセスポート/トランクポート)、および、トランクプロトコル(IEEE 802.1QかISL)を動的に着替えるCisco独自の技術
