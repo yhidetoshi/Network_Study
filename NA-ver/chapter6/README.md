@@ -56,4 +56,22 @@
   - トランクポート
     - 複数のVLANトラフィックを転送する 
 
+- スイッチポートにVLANを割り当てる説明
+  - コマンド：`(config-if)#switchport access vlan <vlan-id>`
+  - VLANを作成した後にスイッチポートにVLANを割り当てるのが一般的
+  - `switchport access vlanコマンド`で作成していないVLAN IDを指定した場合は
+    - `「%Access VLAN does not exist. Creating vlan <vlan ID>」`と言うメッセージが表示されてVLANが作成される
+    - 作成されたVLANはフラッシュメモリ内のvlan.datファイルに追加される
 
+(ex)12ポートを持つCatalystスイッチに3つのVLANを設定
+- スイッチはポートごとにコリジョンドメインを分割する
+- VLANごとにブロードキャストドメインを分割する
+
+=> コリジョンドメイン数は12, ブロードキャストドメイン数は3
+
+
+- **スイッチポートに割り当てられているVLANを確認するコマンド**
+  - `show vlan`
+  - `show interfaces switchport`
+  - `show running-config`
+  - `show interface status`
