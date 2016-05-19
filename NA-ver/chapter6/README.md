@@ -178,3 +178,32 @@
   - デフォルトでは"VLAN0020"のように名前がつけられる
   - トランクポートは表示されない
   - VLAN1002〜1005はデフォルトのVLANで削除できない
+
+
+- ネイティブVLAN
+  - トランクポートからタグを付加しないでイーサネットフレームのまま転送するVLAN
+  - ISLはネイティブVLANをサポートしていない
+  - 管理VLAN
+    - Catalystスイッチの管理用トラフィックを伝搬するためのVLANでデフォルトはVLAN1であり、ネイティブVLANと管理VLANを一致させる必要はない
+  
+**[ネイティブVLANを変更するコマンド]**
+```
+(config-if)#switchport trunk native vlan <vlan-id>
+```
+**[Allowd VLANの設定(トランクにVLANを許可する)]**
+```
+(config-if)#switchport trunk allowed vlan <vlan-list>
+
+(*)<vlan-list>は1〜4094の範囲から単一のVLAN番号、またはハイフン「-」で範囲指定
+```
+
+
+- トランクポートをデフォルトで有効にした場合
+  - システムに予約されているVLAN(0, 4095)以外は全てのVLANが許可される
+
+- `show interface trunk`の結果
+  - Status部分が「trunking」はトランクポートとして動作
+  - Encapsulationが「802.1q」はカプセル化タイプはIEEE 802.1Qを使用
+  - Mode部分が「on」になっている場合、`switchport mode trunk`コマンドが設定されている
+
+
