@@ -98,3 +98,18 @@
 - **DTP**(Dynamic Trunking Protocol)
   - 対向機器のポートネゴシエーションを行って動的にトランクポートを設定するプロトコル 
   - 対向機器のポートとネゴシエーションを行い、その設定に応じてスイッチポートのタイプ(アクセスポート/トランクポート)、および、トランクプロトコル(IEEE 802.1QかISL)を動的に着替えるCisco独自の技術
+
+
+**スイッチポートのネゴシエーション設定**
+- `(config-if)#switchport mode {dynamic desirable | dynamic auto}`
+  - `dynamic desirable`: DTPフレームを送受信して積極的にトランクポートになるようにネゴシエーションする.対向がaccessだとaccessポートになる
+  - `dynamic auto`: DTPフレームを受診して対向からトランクになるように働きかけられるとトランクポートになる.対向がaccessまたはdynamic autoの場合はaccessポートになる
+
+
+
+
+**明示的にトランクポートまたはアクセスポートにしたい場合のコマンド**
+```
+(config-if)#switchport mode { access | trunk }
+```
+
