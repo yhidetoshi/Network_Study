@@ -69,3 +69,9 @@
   - **EtherChannelの設定と検証**
   - **EtherChannelのトラブルシューティング**
   
+#### Chapter8 Layer3冗長化
+- **内容**
+  - **デフォルトゲートウェイの冗長化*
+  - **HSRP**
+  - **VRRP**
+  - **GLBP**
