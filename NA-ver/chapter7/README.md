@@ -170,5 +170,8 @@
     - **ディスカーディング状態**
     - **ラーニング状態**
     - **フォワーディング状態**
+  - コマンド(RSTPを有効)
+    - `spanning-tree mode rapid-pvst` : 有効化
+    - `show spanning-tree` : 確認
 
 
