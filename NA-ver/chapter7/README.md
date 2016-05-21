@@ -170,8 +170,46 @@
     - **ディスカーディング状態**
     - **ラーニング状態**
     - **フォワーディング状態**
+  - ポートロール
+    - **ルートポート(RP)**
+    - **指定ポート(DP)**
+    - **代替ポート(Altn)**
+    - **バックアップポート(Backup Port)**
+      - RSTPでは『代替ポート』と『バックアップポート』を追加している 
+  - BPDUの種類
+    - **プロポーザル(提案)**
+    - **アグリーメント(合意)**
+      - この2種類のBPDUで高速にコンバージェンスする
+  - 2種類のリンク
+    - **ポオインツーポイントリンク**
+        - 全2重モードで動作するポートで、隣接する2台のスイッチ間を1対1で直接接続により高速 
+    - **共有リンク(シェアードリンク)**
+      - 半二重モードで動作、コンバージェンスは従来のSTPと同じタイマー 
+  
   - コマンド(RSTPを有効)
     - `spanning-tree mode rapid-pvst` : 有効化
     - `show spanning-tree` : 確認
 
 
+- RSTPにおいて、スイッチと接続していないポートを**エッジポート**と呼ぶ
+- エッジポートは即時にフォワーディング状態へ移行:Ciscoの**PortFast機能**に相当
+
+[Edgeポート確認]  
+- `#show running-config interface <interface>` 
+```
+interface FastEthernet0/1
+  spanning-tree portfast
+end
+```
+- `#show spanning-tree vlan 1`
+```
+ VLAN0001
+   Spanning tree enabled protocol rstp
+
+---
+   
+Interface Role Sts Cost Prio Nbr Type
+--------- ---- --- ---  ---- --- ----
+Fa0/1     Desg FWD 19   128.1 Edge P2p
+   
+```
