@@ -1,4 +1,4 @@
-設問14,28 を再確認
+設問14,28,35 を再確認
 
 #### Chapter7 スパニングツリープロトコルとEtherChannel
 - **内容**
@@ -213,3 +213,42 @@ Interface Role Sts Cost Prio Nbr Type
 Fa0/1     Desg FWD 19   128.1 Edge P2p
    
 ```
+
+- EtherChannel(イーサチャンネル)
+  - 複数のイーサネットポートを1つの論理チャンネルにグループ化する技術(仮想ポート)
+    - (注意)シリアルポートでは使用できない
+    - Cisco独自
+  -　一般的にはリンクアグリゲーション
+  -　L3スイッチの場合、L2ポートL3ポートの両方で使用できる
+  -　IEEE 802.3adで規定
+  -　ロードバランシング(負荷分散)として設定できる
+  -　メリット
+    - **帯域幅の向上**
+    - **耐障害性の向上**
+    - **ロードバランシング**
+    - **設定の簡素化**
+
+- EtherChannelの設定
+  - 同じ設定にする必要がある項目
+    - 同じ速度
+    - 同じ二重モード
+    - アクセスポートまたはトランクポート
+    - 同じVLAN
+    - 同じVLANの種類(ネイティブ、Allowed)
+
+- EtherChannelの対向とのネゴシエーション
+  - PAgP(Port Aggregation Protocol)
+    - `disirable` : PAgPパケットを送信し、積極的にチェンネル形成をネゴシエーションする。対向ポートが`desirable`または`auto`の場合にポートチャネルを形成
+    -  `auto` : PAgAパケットに応答するが、自身からネゴシエーションを開始しない。対向ポートがdesirableの場合にポートチャネルを形成
+    
+    - Cisco独自のポート集約プロトコル
+    
+  - LACP (Link Aggregation Control Protocol) 
+    - IEEE 802.3ad標準のリンク集約制御プロトコル 
+
+- EtherChannelの設定(固定)
+  - `channel-group mode on` コマンド
+    - `(config-if-range)#channel-group <channel-group-number> mode on` 
+    
+
+
