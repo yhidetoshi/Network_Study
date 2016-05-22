@@ -36,3 +36,25 @@
 ```
 HSRPの仮想MACアドレス = 0000.0c07.ac[HSRPグループ番号(16進数)]
 ```
+
+- HSRP仮想IPアドレスには、同一サブネット上の未使用のIPアドレスが必要
+- アクティブルータでは、仮想IPアドレスと仮想MACアドレスがアクティブである
+- インターフェース上で複数のHSRPグループを形成し、ロードバンスが可能
+- HSRPグループの範囲は[0-255]
+- フレーンテキスト認証とMD5認証をサポートしている
+
+- アクティブルータとスタンバイルータ
+  - 互いに定期的にHelloメッセージを送信
+    - Holdタイマの時間が経過してもHelloを受信できなければ相手がダウンしたと判断
+    - デフォルト値は、`Helloタイマ:3秒`、`Holdタイマー10秒`
+
+
+**[デフォルトゲートウェイの冗長構成化プロトコル]**
+- 種類
+  - `HSRP` : Cisco独自、Active/Standy方式
+  - `VRRP` : RFC標準、Master/Backup方式
+    -　マルチベンダ環境で利用可能 
+  - `GLBP` : Cisco独自、Load Balancing方式
+
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/vrrp-image.jpg)
