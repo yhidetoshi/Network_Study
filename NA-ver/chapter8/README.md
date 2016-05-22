@@ -56,5 +56,12 @@ HSRPの仮想MACアドレス = 0000.0c07.ac[HSRPグループ番号(16進数)]
     -　マルチベンダ環境で利用可能 
   - `GLBP` : Cisco独自、Load Balancing方式
 
+[VRRPの図]と[HSRPの図]
+(引用：http://bit.ly/1WIskWx)
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/vrrp-image.jpg)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/hsrp-image.jpeg)
+
+
+
+
