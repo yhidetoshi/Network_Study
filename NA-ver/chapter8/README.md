@@ -62,6 +62,30 @@ HSRPの仮想MACアドレス = 0000.0c07.ac[HSRPグループ番号(16進数)]
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/vrrp-image.jpg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/hsrp-image.jpeg)
 
+**[VRRPの仮想MACアドレス]**
+VRRPの仮想MACアドレスは、先頭から5バイトは固定で『0000.5e00.01』
+```
+VRRPの仮想MACアドレス = 0000.5e00.01[VRRPグループ番号(16進数)]
+```
+
+- VRRPとHSRPの違い
+  - VRRPはHSRPとは違い、仮想IPアドレスには物理ルータの実IPアドレスを使用できる
+
+- オブジェクトトラッキング
+  - ルーティングテーブルの経路情報などを対象に追跡する機能
+  - オブジェクトトラッキングを利用すると、リンク障害の他、様々な状況に応じて転送ルータを切り替えることができる
+  - VRRPグループ内で最適なルータがマスタールータになることを保証する
+
+
+- **GLBP**(Gateway Load Balancing Protocol)
+  - シスコが開発したデフォルトゲートウェイの冗長化とロードバランシングを提供するプロトコル
+  - 1つのグループだけで、サブネット上の全てのホストに同じ仮想IPアドレスをデフォゲとして割り当てると、自動的にデフォルトゲートウェイのロードバランシングが行われる
+  - ルータの物理インターフェースごとに最大1024の仮想ルータグループをサポート
+  - 認証方式はブレーンテキストとMD5をサポート
+
+1.  GLBPグループには最大4つの仮想MACアドレスが自動生成
+2.  グループ内の各ルータに仮想MACアドレスを割り当てて転送ルータ(デフォゲ)として機能させ、ロードバランシングを実現する
+3.  この転送ルータをAVF(Active Virtual Forwarder)という
 
 
 
