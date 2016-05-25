@@ -59,6 +59,12 @@
       - 0にした場合、DRもBDRも選出されない 
       - プライオリティ値が同じ場合、最も高いルータIDを持つものがDRやBDRに選出される
     
+**[OSPFのBR/BDRの有無のイメージ]**
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ospf-lsa.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/ospf-no-lsa.png)
+
+(引用:http://www.infraexpert.com/study/ospfz7.html)
 
 
 **[階層化されたOSPFネットワーク図]**
