@@ -65,3 +65,14 @@
   - ルーティングテーブル
 
 
+**[OSPFで使用されるパケット]**
+
+|パケット名  |説明         |
+|:-----------|:------------|
+|Hello       | ネイバー関係を確立および維持するためのパケット
+|DBD         |DataBase Description. LSDBに含まれるLSAのリストをネイバーに提示し、同期するためのパケット |
+|LSR|Link State Request. ネイバーにLSAを要求するためのパケット|
+|LSU|Link State Update ネイバーから要求されたLSAを送信するためのパケット|
+|LSAck|Link State Acknowledgement. DBDやLSUの受信による確認応答|
+
+
