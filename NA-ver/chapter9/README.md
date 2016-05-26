@@ -232,5 +232,19 @@
   - `priority`: 値を0〜255の範囲で指定、デフォルトは1
   - プライオリティを0にするとDROTHERになる
 
+- OSPFコマンド
+  - OSPF確認コマンド 
+    - `#show ip ospf interface` 
+  - デフォルトルートの登録(自身のルーティングテーブルにデフォルトルートを登録)
+    - `(config)#ip route 0.0.0.0 0.0.0.0` 
+  - OSPFデフォルトルートアドバタイズ
+    - `(config-router)#default-information originate` 
+
+|コマンド  |説明         |
+|:-----------|:------------|
+|show ip protocols|ルーティングプロセスのパラメータと現在の状態を表示|
+|show ip ospf|OSPFの全般的な情報を表示|
+|show ip ospf interface|OSPFインターフェースに関する情報の表示|
+|show ip ospf database|LSDBの表示|
 
 
