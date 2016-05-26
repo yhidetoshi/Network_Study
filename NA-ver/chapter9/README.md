@@ -211,3 +211,26 @@
 
 **状態繊維**
 (DOWN) => (INIT) => (2WAY) => (EXSTART) => (EXCHANGE) => (LOADING) => (FULL)
+
+- DROTHERとDROTHERの通信
+  - 2WAY状態で収束する
+  - 関係は単なるネイバー
+
+- OSPFのコスト計算
+  - 管理者が明示的に設定することが可能だが、設定していない場合には下記の式で計算 
+  - `Cost = (帯域幅) / インタフェース帯域幅`  
+
+- コスト計算式の参照帯域幅の変更
+```
+(config-router)#auto-cost reference-bandwith <ref-bw>
+
+*) ref-bw : 参照帯域幅を1〜4294967
+```
+
+- OSPFプライオリティの設定
+  - `(config-if)#ip ospf priority <priority>`
+  - `priority`: 値を0〜255の範囲で指定、デフォルトは1
+  - プライオリティを0にするとDROTHERになる
+
+
+
