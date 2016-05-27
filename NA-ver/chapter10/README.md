@@ -104,5 +104,53 @@
 - フィージブルサクセサが存在しなければ、その宛先ネットワークへの経路が他に存在しないを確認するためにクエリパケットを全てのネイバーにマルチキャストで送信して再計算する
   
 
+**[EIGRPコマンド]**
+```
+- EIGRPプロセスの起動
+(config)#router eigrp <autonomous-system>
+*)autonomous-system: AS番号を1〜65535の範囲で指定
 
+
+
+- EIGRPが動作するインタフェースの定義
+(config-router)#network <network> |wildcard-mask
+
+
+- 自動経路集約の有効化
+(config-router)#auto-summary
+
+- 自動経路集約の無効化
+(config-router)#no auto-summary
+
+
+- EIGRPトポロジテーブルの表示
+#show ip eigrp topology
+
+- ルーティングテーブルの表示
+#show ip route eigrp
+
+- EIGRPネイバーテーブルの内容確認
+#show ip eigrp neighbors
+
+- 不等コストロードバランシングの設定
+(config-router)#variance <multiplier>
+
+*) multipler: サクセサのFD値の何倍までの経路をロードバランシングの対象にするか
+範囲は1〜128(デフォルトは1)
+
+- 起動中のIPルーティングプロトコルに関する情報を表示
+#show ip protocols
+
+- EIGRP MD5認証の有効化
+(config-if)#ip authentication mode eigrp <AS> md5
+
+- 送受信されたEIGRPの各種パケットの数を確認するには
+#show ip eigrp traffic
+
+```
+
+- ネイバー認証
+  - プレーンテキスト(平文)認証
+  - MD5認証
+    - **EIGRPはMD5認証しかサポートしない** 
 
