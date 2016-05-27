@@ -129,8 +129,11 @@
 - ルーティングテーブルの表示
 #show ip route eigrp
 
-- EIGRPネイバーテーブルの内容確認
+- EIGRPネイバーテーブルの内容確認(v4)
 #show ip eigrp neighbors
+
+- EIGRPネイバーテーブルの内容確認(v6)
+#show ipv6 eigrp neighbors
 
 - 不等コストロードバランシングの設定
 (config-router)#variance <multiplier>
@@ -153,4 +156,11 @@
   - プレーンテキスト(平文)認証
   - MD5認証
     - **EIGRPはMD5認証しかサポートしない** 
+
+- EIGRP for IPv6
+  - IPv6ネットワークで使用されるEIGRPルーティングプロトコル
+    - マルチキャストアドレス(v4): `224.0.0.10`
+    - マルチキャストアドレス(v6): `FF02::A`
+
+
 
