@@ -56,3 +56,11 @@
 
 - DHCPサーバでIPアドレス競合を確認
   - `show ip dhcp conflict`コマンド 
+
+- スタティックNAT
+  - 1対1の変換で常に同じアドレスに変換される
+  - 外部に対してサーバを公開する目的などで構成される
+  - `(config)#ip nat inside source static <local-ip> <global-ip>`
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/static-nat1.png)
+(引用：http://goo.gl/r5lnl)
