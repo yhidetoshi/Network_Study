@@ -53,3 +53,6 @@
    
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/dhcp-relay.png)
 
+
+- DHCPサーバでIPアドレス競合を確認
+  - `show ip dhcp conflict`コマンド 
