@@ -31,3 +31,25 @@
 - アドレス競合を検出すると、そのアドレスはプールから取り除かれ、管理者が競合を解決するまで割り当てられない
 - Ciscoルータでは`ip address dhcp`コマンドを設定
 
+- Cisco iOSはDHCPサーバとしての機能を全て備えている.Ciscoルータ、CatalystスイッチをDHCPサーバとして動作させることが可能
+```
+- DHCPプールの作成
+(config)#ip dhcp pool <pool-name>
+
+- ネットワークアドレスの指定
+(dhcp-config)#network <network> [ <subnet-mask> | /<prefix-length> ]
+
+- デフォルトゲートウェイの指定
+(dhcp-config)#default-router <ip-address>
+-> DHCPクライアントに通知するデフォルトゲートウェイを指定する
+
+- 除外するIPアドレスを指定
+(config)#ip dhcp excluded-address <ip-address> [ <last-ip-address> ]
+```
+
+- DHCPリレーエージェント
+  - DHCPクライアントは異なるサブネットにあるDHCPサーバからIPを取得できるようになる
+  - `ip helper-address`コマンド 
+   
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/dhcp-relay.png)
+
