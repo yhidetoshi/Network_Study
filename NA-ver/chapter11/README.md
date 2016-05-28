@@ -58,5 +58,21 @@
     - (例) 192.168.1.5の全てをチェックする場合
       - `0.0.0.0`  
     - (例) 192.168.1.5の全てをチェックしない場合
-      - `255.255.255.255`
-    
+      - `255.255.255.255
+  - ワイルドカードマスク`0.0.0.0`の代わりに`host`をipアドレスの前につけて代用できる
+  - `1.1.1.1.`は`any`で代用できる
+
+**番号付き標準ACLの作成**
+```
+(config)#access-list <acl-number> { permit | deny } <source> [<wildcard>]
+
+(例)
+(config)#access-list 1 permit 10.1.1.1 0.0.0.0
+
+-> 標準ACLは0.0.0.0のワイルドカードを省略できる
+
+(config)#access-list 1 permit host 10.1.1.1
+
+- 番号付きACLをインターフェースに適用
+(config-if)#ip access-group <acl-number> { in | out }
+```
