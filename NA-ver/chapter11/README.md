@@ -75,4 +75,37 @@
 
 - 番号付きACLをインターフェースに適用
 (config-if)#ip access-group <acl-number> { in | out }
+
+- 特定の送信元からのIPトラフィックを制御する
+(config)#ip access-list standard <acl-name>
+(config-std-nacl)#|<シーケンス番号>| { permit | deny } <source> |<wildcard>|
+
+- 名前付き拡張ACLを作成する場合
+ip access-list extended <acl-name>コマンドを使う
+
+- 作成した全てのACLを確認するには
+#show access-listsコマンドを使う
+
+- 特定のACLのみ表示する
+#show ip access-lists <acl-number>
+
+- 全てのIPv4のACLを表示
+#show ip access-lists
+
+- インターフェースにACLが適用されているかの確認
+#show ip interface
+
+- 作成したACLを削除
+no access-list <acl-number>コマンド
+
 ```
+
+- 拡張ACLでチェックできるフィールド
+  - プロトコル
+  - 送信元IPアドレス
+  - 往診元ポート
+  - 宛先IPアドレス
+  - 宛先ポート
+
+- ダイナミックACL
+  - ACLを適用しているルータのインターフェースに対して、ユーザがTelnetまたはsshを行って認証すると、特敵の期間だけそのユーザのトラフィックがルータを通過することができる 
