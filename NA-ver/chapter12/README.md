@@ -19,5 +19,15 @@
     - ドメイン名
     - DNSサーバのIPアドレス
     - NTPサーバのIPアドレス
+
+[DHCPサーバとクライアント]
   
+
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/dhcp-ser-cli.jpg)
+
+- DHCPクライアントはDISCOVER(ブロードキャスト)メッセージを送信してDHCPサーバを発見する
+- DHCPサーバはREQUESTメッセージ(ブロードキャスト)をクライアントに送信する
+- DHCPサーバはアドレス競合を検出するためにpingを使用し、DHCPクライアントはGratuitous ARPを使用
+- アドレス競合を検出すると、そのアドレスはプールから取り除かれ、管理者が競合を解決するまで割り当てられない
+- Ciscoルータでは`ip address dhcp`コマンドを設定
+
