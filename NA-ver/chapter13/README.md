@@ -93,7 +93,47 @@ or
   - ローカル認証の有効化
 [ssh接続のためのコマンド]
 ```
+- ユーザアカウントの作成
+(config)#username <username> password <password>
+or
+(config)#username <username> secret <password>
 
+- ホスト名の設定
+(config)#hostname <hostname>
+
+- ドメイン名の設定
+(config)#ip domain-name <domain-name>
+
+- 暗号鍵の生成
+(config)#crypto key generate rsa
+
+- SSHバージョンの指定
+(config)#ip ssh version {1 | 2}
+
+- SSHのみ許可
+(config)#line vty <line-number>
+(config-line)#transport input ssh
+
+- ローカル認証の有効化
+(config-line)#login local
 ```
 
+- **exec-timeoutコマンド**
+  - 一定時間何も操作してないと、iOSは自動的にセッションを切断する
+    - セキュリティ的なところが理由
+    - コマンド
+      - `(config-line)#exec-timeout <minutes> [<seconds>]` 
+    - デフォルトではタイムアウトは10分
+    - `exec-timeout 0`にするとタイムアウトしなくなる
 
+- **バナーメッセージ**
+  - ログイン時にバナーメッセージを表示する
+  - **motdバナー(Message of The Day(本日のメッセージ))** 
+  - 管理者間で共有するときなどに使われる
+[バナーメッセージの設定]
+```
+(config)#banner motd <delimiter> <メッセージ内容><delimiter>
+
+*) <delimiter>でメッセージの最初と最後を区切る
+#で区切る
+```
