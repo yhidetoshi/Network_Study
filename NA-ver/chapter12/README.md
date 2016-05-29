@@ -64,3 +64,39 @@
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/static-nat1.png)
 (引用：http://goo.gl/r5lnl)
+
+```
+- 内部ネットワークの定義
+(config-if)#ip nat inside
+
+- 外部ネットワークの定義
+(config-if)ip nat outside
+
+```
+
+- **ダイナミックNAT**
+  - 内部グローバルアドレスをあらかじめNATプールに登録し、通信が開始された時にプール内にある未使用のアドレスを使用して内部ローカルアドレスに動的に変換する方式
+ 
+- **NAPT**
+  - グローバルアドレスを複数のホストで共有するための技術
+  - IPアドレスにポート番号を対応づけした変換エントリをNATテーブルに登録する
+  - CiscoではPAT(Port Address Translation)の名称で呼ばれる
+    - NATの設定に`overload`を付加すると有効になる 
+  - IPマスカレード/NATオーバーロードとも呼ばれる
+
+- NATテーブルの内容を表示する
+  - `show ip nat translations`コマンドを使う 
+
+
+**NATプールの作成**
+```
+(config)#ip nat pool <pool-name> <start-ip> <end-ip> { netmask <mask> | prefix-length <length>}
+
+(例)
+(config)#ip nat pool HOGE 192.128.15.97 192.128.15.103 netmask 255.255.255.248
+
+or
+
+(config)#ip nat pool HOGE 192.128.15.97 192.128.15.103 prefix-length 20
+```
+
