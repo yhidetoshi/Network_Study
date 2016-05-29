@@ -98,5 +98,13 @@
 or
 
 (config)#ip nat pool HOGE 192.128.15.97 192.128.15.103 prefix-length 20
+
+
+- ダイナミックNATの設定
+(config)#ip nat inside source list <acl> pool <pool-name>
 ```
 
+- NATおよびPATによるアドレス変換の処理がリアルタイムで表示される
+  - `debug ip nat`
+- NATの統計情報を表示
+  - `show ip nat statistics` 
