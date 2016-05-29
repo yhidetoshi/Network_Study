@@ -172,6 +172,9 @@ or
 
 **[Ciscoのメモリ]**
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/cisco-mem-fig.png)
+
+
 |種類 　　   |説明         |
 |:-----------|:------------|
 |ROM(Read Ony Memory)| 読み込み専用のメモリで、ルータを起動するためのマイクロコードやパスワードリカバリなど、障害復旧を行うためのプログラムが格納されている |
