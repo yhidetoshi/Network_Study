@@ -291,7 +291,7 @@ or
 
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/snmp-image2.jpg)
-
+(画像引用：http://goo.gl/qAGxFI)
 
 
 - **SNMP**
