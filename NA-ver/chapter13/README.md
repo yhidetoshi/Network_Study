@@ -334,3 +334,11 @@ or
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/syslog-level.jpg)
 (画像引用：http://goo.gl/j5CXs4)
  
+[コマンド]
+```
+- syslogメッセージのseverityの設定
+(config)#logging trap <severity>
+severity:(0〜7)
+
+-
+```
