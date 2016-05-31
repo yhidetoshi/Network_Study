@@ -290,7 +290,7 @@ or
 
 
 
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/snmp-image.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/snmp-image2.jpg)
 
 
 
