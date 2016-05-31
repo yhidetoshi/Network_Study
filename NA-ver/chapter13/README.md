@@ -290,6 +290,10 @@ or
 
 
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/Network_Study/snmp-image.png)
+
+
+
 - **SNMP**
   - **SNMPマネージャ**
     - エージェントから必要な情報を収集して、ネットワーク機器を管理するデバイス
