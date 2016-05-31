@@ -271,3 +271,30 @@ or
 #show port-security
 ```
 
+[ntpサーバとつなぐ]
+```
+グローバルコンフィグレーションモードで
+(NTPクライアントとしての設定)
+(config)#ntp server <ip-address>
+
+(自身をNTPサーバとする設定)
+(config)#ntp master
+```
+
+
+- **UDI**(Unique Device Identifire)
+  - 固有デバイス識別情報
+    - PIDはCisco IOSイメージのライセンスを取得する際に必要なUDIに含まれる製品番号 
+    - PID(Product ID)とSN(Serial Number)の2つから構成される
+    - `show license udi`で確認できる
+
+
+
+- **SNMP**
+  - **SNMPマネージャ**
+    - エージェントから必要な情報を収集して、ネットワーク機器を管理するデバイス
+    - 収集した情報を解析し、その結果をレポートやグラフに加工できる
+  - **SNMPエージェント**
+    - 管理対象機器(ルータ,スイッチ,サーバなど)の情報収集を行う機器または常駐するプログラム
+  - **MIB**
+    - 管理対象オブジェクト(情報)で構成される管理データベース 
