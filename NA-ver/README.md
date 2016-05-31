@@ -1,4 +1,4 @@
-#### Chapter1   [ネットワークの基礎とTCP/IP](https://github.com/yhidetoshi/Network_Study/tree/master/NA-ver/chapter1/)
+####    [Chapter1_ネットワークの基礎とTCP/IP](https://github.com/yhidetoshi/Network_Study/tree/master/NA-ver/chapter1/)
 - **内容**
   - **ネトワークの概要**
   - **ケーブルの種類**
