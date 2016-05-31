@@ -350,4 +350,56 @@ severity:(0〜7)
     - NW上のトラフィックを集計し、セキュリティの分析を行う
     - リソースの使用率に対する従量制の課金
     - 測定情報を基に効率的なネットワーク設計を行う
+    - インターフェースでのNetFlowの有効化
+      - `(config-if)#ip flow { ingress | egress}` 
 
+**Fa0インターフェースで送受信されるトラフィックをNetFlowで収集する場合のコマンド**
+```
+(config)#interface fastethernet 0
+(config-if)#ip flow ingress
+(config-if)#ip flow egress
+(config)#ip flow-export destination <target_ipaddress>
+(config)#ip flow-export version 5
+```
+
+**NetFlowで収集したキャッシュ情報を表示**
+```
+show ip cache flowコマンド
+```
+
+
+
+- **NetFlowコレクタ**
+  - 収集されたフローデータを処理し、どのアプリケーションが帯域幅を過度に使用しているか
+  - 誰が、いつ、どのようなネットワークに負荷をかけているかなどの情報をグラフ化する
+    - 7つのkeyフィールド
+      - 送信元IPアドレス
+      - 宛先IPアドレス
+      - 送信元ポート番号
+      - 宛先ポート番号
+      - Layer3プロトコル
+      - Tos(Type of Service)
+      - 入力インターフェース
+  - 収集されたデータはデバイズのキャッシュに格納される
+  - 余分にメモリを消費するので、メモリ使用率を考慮する必要がある
+  - データをエクスポートするデバイスを準備する必要がある
+  - Netflowのバージョンを揃えないと形式が異なるので揃える必要がある
+
+
+- **Flexible NetFlow**
+  - NetFlowバージョン5と同様にルータを経由するトラフィックの統計情報を収集できるCisco iOS機能の一つ 
+    - **フローレコード(Flow Record)**
+      - keyフィールドとnonkeyフィールドの組み合わせ
+    - **フローエクスポータ(flow Exporter)**
+      - キャッシュ内のトラフィック情報をNetFlowコレクタが稼働する外部サーバにエクスポートする
+    - **フローモニタ(Flow Monitor)**
+      - トラフィックの収集を実行するためにインターフェースに適用する
+    - **フローサンプラ(Flow Sampler)** 
+      - 分析対象のパケット数を制限し、Flexible NetFlowによるCPU使用率を低減するためにしようされる 
+    
+**[Flexible NetFlowの作成手順]**
+1.  フローレコードの作成
+2.  フローエクスポータの設定
+3.  フローモニタの作成
+4.  フローモニタの適用
+5.  フローサンプラーの設定
