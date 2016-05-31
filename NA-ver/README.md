@@ -133,3 +133,11 @@
   - **SNMP**
   - **Syslog**
   - **NetFlow**
+
+####    [Chapter14 ネットワークデバイスの管理とセキュリティ](https://github.com/yhidetoshi/Network_Study/tree/master/NA-ver/chapter14/)
+- **内容**
+  - **WANの概要**
+  - **シリアルインターフェースの設定と検証**
+  - **バックツーバック接続**
+  - **PPP**
+  - **CHAP認証/PAP認証**
